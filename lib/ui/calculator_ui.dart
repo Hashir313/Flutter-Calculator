@@ -10,6 +10,7 @@ class MyCalculator extends StatefulWidget {
 }
 
 class _MyCalculatorState extends State<MyCalculator> {
+  //variables to calculate and display numbers
   int? firstNum;
   int? secondNum;
   String? result;
@@ -18,12 +19,14 @@ class _MyCalculatorState extends State<MyCalculator> {
   String? operatorToPerform;
 
   void buttonClicked(String buttonText) {
+    //to clear all text from the text
     if (buttonText == "C") {
       textToDisplay = "0";
       firstNum = 0;
       secondNum = 0;
       result = "0";
     }
+    //perform functions for example addition, subtraction, etc.
     else if (buttonText == "+" ||
         buttonText == "-" ||
         buttonText == "x" ||
@@ -56,6 +59,8 @@ class _MyCalculatorState extends State<MyCalculator> {
     });
   }
 
+
+  //button widget of the calculator all buttons
   Widget CalculatorButton(
       {required String buttonValue, required Color buttonColor}) {
     return Expanded(
@@ -105,6 +110,7 @@ class _MyCalculatorState extends State<MyCalculator> {
               style: GoogleFonts.figtree(fontSize: 30.0, color: Colors.white),
             ),
           ),
+          //4 buttons in a row
           Row(
             children: [
               CalculatorButton(
@@ -117,6 +123,7 @@ class _MyCalculatorState extends State<MyCalculator> {
                   buttonValue: 'x', buttonColor: Colors.orange),
             ],
           ),
+          //4 buttons in a row
           Row(
             children: [
               CalculatorButton(
@@ -129,6 +136,7 @@ class _MyCalculatorState extends State<MyCalculator> {
                   buttonValue: '-', buttonColor: Colors.orange),
             ],
           ),
+          //4 buttons in a row
           Row(
             children: [
               CalculatorButton(
@@ -141,6 +149,7 @@ class _MyCalculatorState extends State<MyCalculator> {
                   buttonValue: '÷', buttonColor: Colors.orange),
             ],
           ),
+          //4 buttons in a row
           Row(
             children: [
               CalculatorButton(
